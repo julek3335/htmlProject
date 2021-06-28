@@ -472,3 +472,34 @@ document.getElementById("zad18Button").addEventListener("click",function(){
 
 
 })
+
+//zad19
+document.getElementById("zad19Add").addEventListener("click",function(){
+
+  let p = document.getElementById("zad19Out")
+  let text = document.getElementById("zad19").value
+
+  
+
+  let dot = document.createElement('span')
+  dot.className = "dot"
+  dot.textContent = text
+  p.appendChild(dot)
+
+})
+
+document.getElementById("zad19Del").addEventListener("click",function(){
+
+  let list = document.getElementById("zad19Out")
+  let test = document.getElementById('zad19IDel').value
+
+  for (let i = 0; i < list.childNodes.length; i++) {
+
+    if (test == list.childNodes[i].textContent) {
+
+      list.removeChild(list.childNodes[i])
+
+    }
+    
+  }
+})
