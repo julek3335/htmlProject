@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'Zadanie1')">Zadanie1</button>
+        <button class="tablinks" onclick="openTab(event, 'Zadanie2')">Zadanie2</button>
+        <button class="tablinks" onclick="openTab(event, 'Zadanie3')">Zadanie3</button>
+        <button class="tablinks" onclick="openTab(event, 'Zadanie4')">Zadanie4</button>
+        <button class="tablinks" onclick="openTab(event, 'Zadanie5')">Zadanie5</button>
+        <button class="tablinks" onclick="openTab(event, 'Zadanie17')">Zadanie17</button>
+        <button class="tablinks" onclick="openTab(event, 'Zadanie24')">Zadanie24</button>
+        <button class="tablinks" onclick="openTab(event, 'Zadanie20')">Zadanie20</button>
+        <button class="tablinks" onclick="openTab(event, 'Zadanie12')">Zadanie12</button>
+        <button class="tablinks" onclick="openTab(event, 'Zadanie13')">Zadanie13</button>
+
+
+
+      </div>
+      
+      <!-- Tab content -->
+      <div id="Zadanie1" class="tabcontent">
+        <button id="consolButtton">informacja na konsoli</button>
+        <button id="alertButton">alert</button>
+      </div>
+      
+      <div id="Zadanie2" class="tabcontent">
+        <h3>Zadanie2</h3>
+        <p id="zad2Text">Paris is the capital of France.</p>
+
+        <label for="zad2Black">Czarny</label>
+        <input type="radio" id="zad2Black" name="style" value="zad2Black" checked>
+        <br>
+        <label for="zad2RandomP">Losowy kolor paragrafu</label>
+        <input type="radio" id="zad2RandomP" name="style" value="zad2RandomP">
+        <br>
+        <label for="zad2RandomL">Losowy kolor liter</label>
+        <input type="radio" id="zad2RandomL" name="style" value="zad2RandomL">
+        <br>
+        <button id="zad2Validate">Zmień</button>
+
+      </div>
+      
+      <div id="Zadanie3" class="tabcontent">
+        <h3>Zadanie3</h3>
+        <form id="form">
+          <p id="error" hidden>Please fill out all fields.</p>
+        <div>
+          <label for="firstWord">wprowadz piewsze slowo</label>
+          <input id="firstWord" type="text" placeholder="" required>
+        </div>
+        
+        <div>
+          <label for="secondWord">wprowadz drugie slowo</label>
+          <input id="secondWord" type="text" placeholder="" required>
+        </div>
+
+        <div>
+          <button id="connectButton">Połącz</button>
+          <p id="connectResult"></p>
+        </div>
+      </form>
+      </div>
+
+      <div id="Zadanie4" class="tabcontent">
+        <p hidden id="screenCoords"></p>
+        <button id="startTracking">Rozpocznij śledzenie</button>
+        <button id="stopTracking">Zakoncz śledzenie</button>
+      </div>
+
+
+      <div id="Zadanie5" class="tabcontent">
+        <iframe width="420" height="315" src="https://www.youtube.com/embed/JHTydOCVjFY"></iframe>
+
+      </div>
+
+      <div id="Zadanie17" class="tabcontent">
+        <label for="zad17Text">Wprowadz tekst</label>
+        <br>
+        <textarea id="zad17Text" rows="4" cols="50"></textarea required>
+          <br>
+        <button id="zad17a">Pierwsze trzy litery</button>
+        <button id="zad17b">Przed ostatnia litera</button>
+        <button id="zad17c">Ostatnie cztery znaki</button>
+        <button id="zad17d">Małe litery</button>
+        <button id="zad17e">Duże litery</button>
+        <button id="zad17f">Małe duże na zmianę</button>
+        <button id="zad17g">Bez spacji</button>
+        <button id="zad17h">bez samogłosek</button>
+        <button id="zad17i">odwrócony</button>
+        <br>
+      </div>
+
+
+
+
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <div class="container">
+            
+            <span onclick="document.getElementById('modal').style.display='none'" class="button exit">&times;</span>
+            <p id="zad17Result"></p>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="Zadanie24" class="tabcontent">
+        <label for="zad24Date1">wprowadz date</label>
+        <input type="date" id="zad24Date1">
+
+        <label for="zad24Date2">Wprowadz date</label>
+        <input type="date" id="zad24Date2">
+
+        <button id="zad24Button"></button>
+
+      </div>
+
+
+      <div id="Zadanie20" class="tabcontent">
+        <label for="zad201">1 liczba</label>
+        <input type="number" id="zad201"min="1" max="48">
+
+        <label for="zad202">2 liczba</label>
+        <input type="number" id="zad202"min="1" max="48">
+
+        <label for="zad203">3 liczba</label>
+        <input type="number" id="zad203"min="1" max="48">
+
+        <label for="zad204">4 liczba</label>
+        <input type="number" id="zad204"min="1" max="48">
+
+        <label for="zad205">5 liczba</label>
+        <input type="number" id="zad205"min="1" max="48">
+
+        <label for="zad206">6 liczba</label>
+        <input type="number" id="zad206"min="1" max="48">
+
+        <button id="zad20Button">losu losu</button>
+        
+        <br>
+        <div class="dots">
+          <span class="dot" id="dot1">0</span>
+          <span class="dot" id="dot2">0</span>
+          <span class="dot" id="dot3">0</span>
+          <span class="dot" id="dot4">0</span>
+          <span class="dot" id="dot5">0</span>
+          <span class="dot" id="dot6">0</span>
+        </div>
+
+
+      </div>
+
+      <div id="Zadanie12" class="tabcontent">
+        <label for="zad12">podaj liczbe</label>
+        <input type="number" id="zad12">
+        <button id="zad12Button">silnia</button>
+        <p id="zad12Out"></p>
+      </div>
+
+      <div id="Zadanie13" class="tabcontent"></div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
