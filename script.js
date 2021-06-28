@@ -411,3 +411,45 @@ document.getElementById("zad13Button").addEventListener("click",function() {
   document.getElementById("zad13Out").textContent = wynik
   
 })
+
+
+//zad16 tabela sum/avg
+let zad16Table = []
+document.getElementById("zad16ButtonAdd").addEventListener("click",function() {
+
+  let element = parseInt(document.getElementById("zad16").value)
+
+  if (isNaN(element)) {
+    element = 0
+  }
+
+   zad16Table.push(element)
+
+   console.log(zad16Table)
+
+     document.getElementById("zad16Out").textContent = zad16Table
+     
+
+  
+})
+
+document.getElementById("zad16ButtonSum").addEventListener("click",function(){
+
+  let total = zad16Table.reduce(function(a, b) {
+    return a + b;
+  })
+  document.getElementById("zad16OutSum").textContent = "Suma= "+total
+
+})
+
+document.getElementById("zad16ButtonAvg").addEventListener("click",function(){
+
+  let total = zad16Table.reduce(function(a, b) {
+    return a + b;
+  })
+
+  total = total/zad16Table.length
+  document.getElementById("zad16OutAvg").textContent = "Średnia= "+total
+
+
+})
