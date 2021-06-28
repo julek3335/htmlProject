@@ -478,8 +478,18 @@ document.getElementById("zad19Add").addEventListener("click",function(){
 
   let p = document.getElementById("zad19Out")
   let text = document.getElementById("zad19").value
+  let list = document.getElementById("zad19Out")
 
   
+
+  for (let i = 0; i < list.childNodes.length; i++) {
+
+    if (text == list.childNodes[i].textContent) {
+
+      alert("wartości muszą być unikalne")
+      return 0 
+    }
+  }
 
   let dot = document.createElement('span')
   dot.className = "dot"
@@ -502,4 +512,18 @@ document.getElementById("zad19Del").addEventListener("click",function(){
     }
     
   }
+})
+
+document.getElementById("zad19Sort").addEventListener("click",function(){
+
+  let list = document.getElementById("zad19Out")
+
+  let array = []
+
+  for (let i = 0; i < list.childNodes.length; i++) {
+
+      array.push(list.childNodes[i].textContent)
+  
+  }
+console.log(array)
 })
