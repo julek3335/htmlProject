@@ -381,3 +381,33 @@ document.getElementById("zad12Button").addEventListener("click",function(){
 
 
 })
+
+//zad13 palindromy
+
+document.getElementById("zad13Button").addEventListener("click",function() {
+  
+  table = document.getElementById("zad13").value
+
+  j = table.length - 1
+  let test = true
+  for (let i = 0; i < table.length; i++) {
+    if (table[i] != table[j]) {
+      console.log(table[i] + " " + table[j])
+      test = false
+    }
+    j--
+  }
+
+  let wynik = ""
+  if (test) {
+    wynik = "tekst jest palindromem"
+    document.getElementById("Zadanie13").style.borderColor = "green";
+    
+  }else {
+    wynik = "tekst nie jest palindromem"
+    document.getElementById("Zadanie13").style.borderColor = "red";
+  }
+
+  document.getElementById("zad13Out").textContent = wynik
+  
+})
