@@ -453,3 +453,22 @@ document.getElementById("zad16ButtonAvg").addEventListener("click",function(){
 
 
 })
+
+//zad18 podzielne przez 3
+
+document.getElementById("zad18Button").addEventListener("click",function(){
+
+  let x = document.getElementById("zad18").value
+  x = parseInt(x)
+
+  if (isNaN(x)) {
+    x = 0
+    alert("podaj liczbe")
+  }
+  
+  if (x%3 == 0) {
+    document.getElementById("zad18Out").textContent = "jest podzelne przez 3"
+  }else document.getElementById("zad18Out").textContent = "nie jest podzelne przez 3"
+
+
+})
