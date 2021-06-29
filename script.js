@@ -498,6 +498,8 @@ document.getElementById("zad19Add").addEventListener("click",function(){
   dot.textContent = text
   p.appendChild(dot)
 
+  zad19Counter()
+
 })
 
 document.getElementById("zad19Del").addEventListener("click",function(){
@@ -514,18 +516,84 @@ document.getElementById("zad19Del").addEventListener("click",function(){
     }
     
   }
+
+  zad19Counter()
 })
+
 
 document.getElementById("zad19Sort").addEventListener("click",function(){
 
   let list = document.getElementById("zad19Out")
+  let listch = list.children
+  let array =[] 
 
-  let array = []
-
-  for (let i = 0; i < list.childNodes.length; i++) {
-
-      array.push(list.childNodes[i].textContent)
   
+// console.log(list.length)
+// console.log(list[0].innerHTML)
+
+
+for (let i = 0; i < listch.length; i++) {
+  
+  array[i] = listch[i].innerHTML
+}
+
+
+
+
+list.parentNode.removeChild(list)
+    
+
+let p = document.getElementById("zad19Dots")
+let elem = document.createElement('p')
+elem.id = "zad19Out"
+p.appendChild(elem)
+
+
+
+
+
+
+let Radio = document.getElementsByName("Check")
+for (let i = 0; i < Radio.length; i++){
+  if(Radio[i].checked){
+    Case(i)
   }
+}
+
+
+function Case(i) {
+
+  switch(i){
+    case 0:
+      array.sort()
+      break
+
+    case 1:
+      array.sort()
+      array.reverse()
+      break
+
+  }
+  
+}
 console.log(array)
+let out = document.getElementById("zad19Out")
+
+for (let i = 0; i < array.length; i++) {
+
+  let dot = document.createElement('span')
+  dot.className = "dot"
+  dot.textContent = array[i]
+  out.appendChild(dot)
+  
+}
+
 })
+
+function zad19Counter() {
+  let list = document.getElementById("zad19Out").children
+  let out = document.getElementById("zad19CountOut")
+  out.textContent = "ilość języków programowania: "+list.length
+}
+
+
