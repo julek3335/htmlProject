@@ -1,37 +1,38 @@
 // zakladki
-function openTab(evt, cityName) {
-    // Declare all variables
-    let i, tabcontent, tablinks;
+function openTab(evt, number) {
+    
+    let i, tabcontent, tablinks
   
-    // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("tabcontent");
+    // ukrytawa wszystkie zakladki
+    tabcontent = document.getElementsByClassName("tabcontent")
     for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
+      tabcontent[i].style.display = "none"
     }
   
-    // Get all elements with class="tablinks" and remove the class "active"
+    // usuwa klase active w zakladkach
     tablinks = document.getElementsByClassName("tablinks");
     for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
+      tablinks[i].className = tablinks[i].className.replace(" active", "")
     }
   
-    // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
+    // dodaje klase active do obecnej zakladki
+    document.getElementById(number).style.display = "block"
+    evt.currentTarget.className += " active"
   }
+
 
   // zadanie 1
   const consolButton = document.getElementById('consolButtton')
 
   consolButton.addEventListener('click', function (event) {
-    console.log("zadanie 1");
+    console.log("zadanie 1")
   })
 
 
   const alertButton = document.getElementById('alertButton')
 
   alertButton.addEventListener('click',function (event) {
-      alert("zadanie 1")
+    alert("zadanie 1")
   })
 
   //zadanie 2
@@ -43,12 +44,13 @@ function openTab(evt, cityName) {
   console.log(zad2Text.textContent)
 
   function styleChange(radio){
-  let zad2Radio = document.getElementsByTagName("input")
-  for (let i = 0; i < zad2Radio.length; i++){
-    if(zad2Radio[i].checked){
-      styleCase(i)
+    let zad2Radio = document.getElementsByTagName("input")
+    for (let i = 0; i < zad2Radio.length; i++){
+      if(zad2Radio[i].checked){
+        styleCase(i)
+      }
     }
-  }
+
   function styleCase(i){
     switch(i){
       case 0:
@@ -100,11 +102,11 @@ secondWord.oninvalid = invalid
 form.onsubmit = submit
 
 function invalid(event){
-  error.removeAttribute('hidden');
+  error.removeAttribute('hidden')
 }
 
 function submit(event) {
-  form.setAttribute('hidden', '');
+  form.setAttribute('hidden', '')
   alert(connectResult.textContent = firstWord.value + secondWord.value) 
 }
 
@@ -112,25 +114,25 @@ function submit(event) {
 //zadanie 4
 function findScreenCoords(mouseEvent)
 {
-  let xpos;
-  let ypos;
+  let xpos
+  let ypos
 
-  xpos = mouseEvent.screenX;
-  ypos = mouseEvent.screenY;
-  document.getElementById("screenCoords").innerHTML = xpos + ", " + ypos;
+  xpos = mouseEvent.screenX
+  ypos = mouseEvent.screenY
+  document.getElementById("screenCoords").innerHTML = xpos + ", " + ypos
 }
 document.getElementById('startTracking').addEventListener('click', function (event){
-  document.getElementById("screenCoords").removeAttribute('hidden');
+  document.getElementById("screenCoords").removeAttribute('hidden')
 } )
 
 document.getElementById('stopTracking').addEventListener('click', function (event){
-  document.getElementById("screenCoords").setAttribute('hidden', '');
+  document.getElementById("screenCoords").setAttribute('hidden', '')
 } )
 
-onmousemove = findScreenCoords;
+onmousemove = findScreenCoords
+
 
 //zadanie 5
-
 document.getElementById("zad17a").addEventListener("click", function() {
   let textInput = document.getElementById("zad17Text").value
 
@@ -288,9 +290,9 @@ document.getElementById("zad24Button").addEventListener("click", function () {
   date1 = new Date(document.getElementById("zad24Date1").value)
   date2 = new Date(document.getElementById("zad24Date2").value)
 
-  let diffTime =(date1.getTime() - date2.getTime());
+  let diffTime =(date1.getTime() - date2.getTime())
  
-  let daysDiff = diffTime / (1000 * 3600 * 24);
+  let daysDiff = diffTime / (1000 * 3600 * 24)
    
   if(isNaN(daysDiff) || daysDiff > 0)
   {
@@ -355,7 +357,7 @@ while(uniqueLos.length < 6){
       for ( j = 0; j< tab.length; j++){
         if (tab[i] == uniqueLos[j]) {
           document.getElementById("dot"+(j+1)).style.color = "red"
-          counter++;
+          counter++
         }
       }
 
@@ -401,11 +403,11 @@ document.getElementById("zad13Button").addEventListener("click",function() {
   let wynik = ""
   if (test) {
     wynik = "tekst jest palindromem"
-    document.getElementById("Zadanie13").style.borderColor = "green";
+    document.getElementById("Zadanie13").style.borderColor = "green"
     
   }else {
     wynik = "tekst nie jest palindromem"
-    document.getElementById("Zadanie13").style.borderColor = "red";
+    document.getElementById("Zadanie13").style.borderColor = "red"
   }
 
   document.getElementById("zad13Out").textContent = wynik
@@ -436,7 +438,7 @@ document.getElementById("zad16ButtonAdd").addEventListener("click",function() {
 document.getElementById("zad16ButtonSum").addEventListener("click",function(){
 
   let total = zad16Table.reduce(function(a, b) {
-    return a + b;
+    return a + b
   })
   document.getElementById("zad16OutSum").textContent = "Suma= "+total
 
@@ -445,7 +447,7 @@ document.getElementById("zad16ButtonSum").addEventListener("click",function(){
 document.getElementById("zad16ButtonAvg").addEventListener("click",function(){
 
   let total = zad16Table.reduce(function(a, b) {
-    return a + b;
+    return a + b
   })
 
   total = total/zad16Table.length
