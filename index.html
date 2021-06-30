@@ -24,6 +24,7 @@
         <button class="tablinks" onclick="openTab(event, 'Zadanie16')">Zadanie16</button>
         <button class="tablinks" onclick="openTab(event, 'Zadanie18')">Zadanie18</button>
         <button class="tablinks" onclick="openTab(event, 'Zadanie19')">Zadanie19</button>
+        <button class="tablinks" onclick="openTab(event, 'Zadanie25')">Zadanie25</button>
       </div>
       
       <!-- Tab content -->
@@ -120,7 +121,7 @@
         <label for="zad24Date2">Wprowadz date</label>
         <input type="date" id="zad24Date2">
 
-        <button id="zad24Button"></button>
+        <button id="zad24Button">oblicz</button>
 
       </div>
 
@@ -202,7 +203,14 @@
         <input id="zad19IDel" type="text">
         <button id="zad19Del">usuń</button>
         <button id="zad19Sort">sortuj</button>
+
+        <label for="zad19Dec">Malejąco</label>
+        <input type="radio" id="zad19Dec" name="Check" value="zad2Black" checked>
+        <label for="zad19Check">Rosnąco</label>
+        <input type="radio" id="zad19Check" name="Check" value="zad19Check">
+
         <div class="dots">
+          <div id="zad19Dots">
           <p id="zad19Out">
           <span class="dot">C#</span>
           <span class="dot">J</span>
@@ -211,8 +219,17 @@
           <span class="dot">Python</span>
 
           </p>
+          <p id="zad19CountOut">ilość języków: 5</p>
+        </div>
         </div>
         
+      </div>
+
+      <div id="Zadanie25" class="tabcontent">
+        <input type="number" id="zad25In1" value="123">        
+        <input type="number" id="zad25In2" value="189">
+        <button id="zad25Button">dodaj</button>
+        <p id="zad25Out"></p>        
       </div>
 
 

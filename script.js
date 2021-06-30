@@ -597,3 +597,58 @@ function zad19Counter() {
 }
 
 
+//zad 25
+
+document.getElementById("zad25Button").addEventListener("click",function() {
+
+let x = document.getElementById("zad25In1").value
+let y = document.getElementById("zad25In2").value
+
+let out = document.getElementById("zad25Out")
+
+
+add(x,y)
+
+function add(a,b) {
+  let var1 = a.toString()
+  let var2 = b.toString()
+  let result = ""
+  let transfer = 0
+  let base =0
+  for (var i = var1.length-1; i >= 0; i--) {
+    base = parseInt(var1[i]) + parseInt(var2[i]) + transfer
+    console.log(var1[i]);
+    console.log(var2[i]);
+//36
+    if (base >= 10) {
+      base = base.toString()
+      let last = base[base.length - 1];
+      let length = base.length - 1
+      transfer += parseInt(base.slice(0, length-2))
+      console.log("last "+transfer);
+      base = parseInt(base)
+
+      result += parseInt(last)
+
+    }else {
+      result += base
+      if(transfer > 0)transfer--
+    }
+
+
+  }
+  //let reversed = result.reverse()
+  console.log(reverseString(result))
+  out.textContent =  reverseString(result)
+}
+
+
+
+function reverseString(str) {
+  if (str === "")
+    return "";
+  else
+    return reverseString(str.substr(1)) + str.charAt(0);
+}
+  
+})
