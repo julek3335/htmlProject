@@ -43,6 +43,7 @@ function openTab(evt, number) {
   let zad2Text = document.getElementById('zad2Text')
   console.log(zad2Text.textContent)
 
+  //sprawdzenie który radio button jest wybrany
   function styleChange(radio){
     let zad2Radio = document.getElementsByTagName("input")
     for (let i = 0; i < zad2Radio.length; i++){
@@ -51,6 +52,7 @@ function openTab(evt, number) {
       }
     }
 
+  //opcje radiobutton
   function styleCase(i){
     switch(i){
       case 0:
@@ -68,6 +70,7 @@ function openTab(evt, number) {
   }
   }
 
+  //zwraca losowy kolor
   function randomColror(){
     let random = Math.floor((Math.random()*5)+1)
     switch(random){
@@ -101,10 +104,11 @@ firstWord.oninvalid = invalid
 secondWord.oninvalid = invalid
 form.onsubmit = submit
 
+//okno błędu
 function invalid(event){
   error.removeAttribute('hidden')
 }
-
+//ukrycie okna błędu + wynik
 function submit(event) {
   form.setAttribute('hidden', '')
   alert(connectResult.textContent = firstWord.value + secondWord.value) 
@@ -121,18 +125,19 @@ function findScreenCoords(mouseEvent)
   ypos = mouseEvent.screenY
   document.getElementById("screenCoords").innerHTML = xpos + ", " + ypos
 }
+//wyswietlanie pozycji kursora
 document.getElementById('startTracking').addEventListener('click', function (event){
   document.getElementById("screenCoords").removeAttribute('hidden')
 } )
-
+//chowanie pozycji kursora
 document.getElementById('stopTracking').addEventListener('click', function (event){
   document.getElementById("screenCoords").setAttribute('hidden', '')
 } )
 
-onmousemove = findScreenCoords
+onmousemove = findScreenCoords()
 
 
-//zadanie 5
+//zadanie 17
 document.getElementById("zad17a").addEventListener("click", function() {
   let textInput = document.getElementById("zad17Text").value
 
@@ -285,6 +290,7 @@ document.getElementById("zad17i").addEventListener("click",function() {
 })
 
 
+//zad24
 document.getElementById("zad24Button").addEventListener("click", function () {
 
   date1 = new Date(document.getElementById("zad24Date1").value)
@@ -371,6 +377,7 @@ while(uniqueLos.length < 6){
 document.getElementById("zad12Button").addEventListener("click",function(){
   let i = document.getElementById("zad12").value
   i = parseInt(i)
+
   if (i > 0 ) {
     let wynik = 1
     while (i > 1) {
@@ -425,14 +432,11 @@ document.getElementById("zad16ButtonAdd").addEventListener("click",function() {
     element = 0
   }
 
-   zad16Table.push(element)
+  zad16Table.push(element)
 
-   console.log(zad16Table)
 
-     document.getElementById("zad16Out").textContent = zad16Table
+  document.getElementById("zad16Out").textContent = zad16Table
      
-
-  
 })
 
 document.getElementById("zad16ButtonSum").addEventListener("click",function(){
@@ -461,7 +465,7 @@ document.getElementById("zad16ButtonAvg").addEventListener("click",function(){
 document.getElementById("zad18Button").addEventListener("click",function(){
 
   let x = document.getElementById("zad18").value
-  x = parseInt(x)
+  //x = parseInt(x)
 
   if (isNaN(x)) {
     x = 0
@@ -475,6 +479,7 @@ document.getElementById("zad18Button").addEventListener("click",function(){
 
 })
 
+
 //zad19
 document.getElementById("zad19Add").addEventListener("click",function(){
 
@@ -483,7 +488,7 @@ document.getElementById("zad19Add").addEventListener("click",function(){
   let list = document.getElementById("zad19Out")
 
   
-
+//sprawdzenie czy dodana wartość jest unikalna
   for (let i = 0; i < list.childNodes.length; i++) {
 
     if (text == list.childNodes[i].textContent) {
@@ -492,7 +497,7 @@ document.getElementById("zad19Add").addEventListener("click",function(){
       return 0 
     }
   }
-
+//tworzy element span klasa dot z wprowadzona wartoscia
   let dot = document.createElement('span')
   dot.className = "dot"
   dot.textContent = text
@@ -507,6 +512,7 @@ document.getElementById("zad19Del").addEventListener("click",function(){
   let list = document.getElementById("zad19Out")
   let test = document.getElementById('zad19IDel').value
 
+  //szukamy podanej nazwy
   for (let i = 0; i < list.childNodes.length; i++) {
 
     if (test == list.childNodes[i].textContent) {
@@ -527,32 +533,21 @@ document.getElementById("zad19Sort").addEventListener("click",function(){
   let listch = list.children
   let array =[] 
 
-  
-// console.log(list.length)
-// console.log(list[0].innerHTML)
-
-
+//kopioje wartosci do tablicy  
 for (let i = 0; i < listch.length; i++) {
   
   array[i] = listch[i].innerHTML
 }
-
-
-
-
+//usuwa element nadrzedny
 list.parentNode.removeChild(list)
     
-
+//tworzy wczesnjiej usuniety element
 let p = document.getElementById("zad19Dots")
 let elem = document.createElement('p')
 elem.id = "zad19Out"
 p.appendChild(elem)
 
-
-
-
-
-
+//sprawdza ktory radio button jest wybrany
 let Radio = document.getElementsByName("Check")
 for (let i = 0; i < Radio.length; i++){
   if(Radio[i].checked){
@@ -576,9 +571,10 @@ function Case(i) {
   }
   
 }
+
 console.log(array)
 let out = document.getElementById("zad19Out")
-
+//elementy z posortowanej tabeli wpisuje do nowych kropek
 for (let i = 0; i < array.length; i++) {
 
   let dot = document.createElement('span')
@@ -590,6 +586,7 @@ for (let i = 0; i < array.length; i++) {
 
 })
 
+//zlicza ilosc elementow
 function zad19Counter() {
   let list = document.getElementById("zad19Out").children
   let out = document.getElementById("zad19CountOut")
@@ -619,7 +616,7 @@ function add(a,b) {
     base = parseInt(var1[i]) + parseInt(var2[i]) + transfer
     console.log(var1[i]);
     console.log(var2[i]);
-//36
+
     if (base >= 10) {
       base = base.toString()
       let last = base[base.length - 1];
@@ -637,7 +634,6 @@ function add(a,b) {
 
 
   }
-  //let reversed = result.reverse()
   console.log(reverseString(result))
   out.textContent =  reverseString(result)
 }
