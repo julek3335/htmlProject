@@ -134,7 +134,7 @@ document.getElementById('stopTracking').addEventListener('click', function (even
   document.getElementById("screenCoords").setAttribute('hidden', '')
 } )
 
-onmousemove = findScreenCoords()
+onmousemove = findScreenCoords
 
 
 //zadanie 17
